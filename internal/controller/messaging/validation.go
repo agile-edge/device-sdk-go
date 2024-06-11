@@ -9,15 +9,15 @@ import (
 	"context"
 	"encoding/json"
 
-	bootstrapContainer "github.com/edgexfoundry/go-mod-bootstrap/v3/bootstrap/container"
-	"github.com/edgexfoundry/go-mod-bootstrap/v3/di"
-	"github.com/edgexfoundry/go-mod-core-contracts/v3/common"
-	"github.com/edgexfoundry/go-mod-core-contracts/v3/dtos"
-	"github.com/edgexfoundry/go-mod-core-contracts/v3/dtos/requests"
-	"github.com/edgexfoundry/go-mod-core-contracts/v3/errors"
-	"github.com/edgexfoundry/go-mod-messaging/v3/pkg/types"
+	bootstrapContainer "github.com/agile-edgex/go-mod-bootstrap/v3/bootstrap/container"
+	"github.com/agile-edgex/go-mod-bootstrap/v3/di"
+	"github.com/agile-edgex/go-mod-core-contracts/v3/common"
+	"github.com/agile-edgex/go-mod-core-contracts/v3/dtos"
+	"github.com/agile-edgex/go-mod-core-contracts/v3/dtos/requests"
+	"github.com/agile-edgex/go-mod-core-contracts/v3/errors"
+	"github.com/agile-edgex/go-mod-messaging/v3/pkg/types"
 
-	"github.com/edgexfoundry/device-sdk-go/v3/internal/container"
+	"github.com/agile-edgex/device-sdk-go/v3/internal/container"
 )
 
 func SubscribeDeviceValidation(ctx context.Context, dic *di.Container) errors.EdgeX {

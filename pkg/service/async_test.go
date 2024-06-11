@@ -8,11 +8,11 @@ package service
 import (
 	"testing"
 
-	"github.com/edgexfoundry/go-mod-core-contracts/v3/clients/logger"
-	"github.com/edgexfoundry/go-mod-core-contracts/v3/models"
+	"github.com/agile-edgex/go-mod-core-contracts/v3/clients/logger"
+	"github.com/agile-edgex/go-mod-core-contracts/v3/models"
 	"github.com/stretchr/testify/assert"
 
-	sdkModels "github.com/edgexfoundry/device-sdk-go/v3/pkg/models"
+	sdkModels "github.com/agile-edgex/device-sdk-go/v3/pkg/models"
 )
 
 var d = sdkModels.DiscoveredDevice{

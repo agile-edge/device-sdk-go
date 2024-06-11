@@ -13,14 +13,14 @@ import (
 	"net/url"
 	"strings"
 
-	"github.com/edgexfoundry/go-mod-core-contracts/v3/clients/http/utils"
-	"github.com/edgexfoundry/go-mod-core-contracts/v3/common"
-	commonDTO "github.com/edgexfoundry/go-mod-core-contracts/v3/dtos/common"
-	"github.com/edgexfoundry/go-mod-core-contracts/v3/dtos/responses"
-	"github.com/edgexfoundry/go-mod-core-contracts/v3/errors"
+	"github.com/agile-edgex/go-mod-core-contracts/v3/clients/http/utils"
+	"github.com/agile-edgex/go-mod-core-contracts/v3/common"
+	commonDTO "github.com/agile-edgex/go-mod-core-contracts/v3/dtos/common"
+	"github.com/agile-edgex/go-mod-core-contracts/v3/dtos/responses"
+	"github.com/agile-edgex/go-mod-core-contracts/v3/errors"
 
-	"github.com/edgexfoundry/device-sdk-go/v3/internal/application"
-	sdkCommon "github.com/edgexfoundry/device-sdk-go/v3/internal/common"
+	"github.com/agile-edgex/device-sdk-go/v3/internal/application"
+	sdkCommon "github.com/agile-edgex/device-sdk-go/v3/internal/common"
 
 	"github.com/labstack/echo/v4"
 )

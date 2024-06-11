@@ -6,8 +6,8 @@
 package provision
 
 import (
-	"github.com/edgexfoundry/go-mod-bootstrap/v3/bootstrap/utils"
-	"github.com/edgexfoundry/go-mod-core-contracts/v3/clients/logger"
+	"github.com/agile-edgex/go-mod-bootstrap/v3/bootstrap/utils"
+	"github.com/agile-edgex/go-mod-core-contracts/v3/clients/logger"
 	"net/url"
 	"path"
 	"strings"

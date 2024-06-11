@@ -9,12 +9,12 @@ package cache
 import (
 	"context"
 
-	"github.com/edgexfoundry/go-mod-core-contracts/v3/dtos"
-	"github.com/edgexfoundry/go-mod-core-contracts/v3/errors"
-	"github.com/edgexfoundry/go-mod-core-contracts/v3/models"
+	"github.com/agile-edgex/go-mod-core-contracts/v3/dtos"
+	"github.com/agile-edgex/go-mod-core-contracts/v3/errors"
+	"github.com/agile-edgex/go-mod-core-contracts/v3/models"
 
-	bootstrapContainer "github.com/edgexfoundry/go-mod-bootstrap/v3/bootstrap/container"
-	"github.com/edgexfoundry/go-mod-bootstrap/v3/di"
+	bootstrapContainer "github.com/agile-edgex/go-mod-bootstrap/v3/bootstrap/container"
+	"github.com/agile-edgex/go-mod-bootstrap/v3/di"
 )
 
 // InitCache Init basic state for cache

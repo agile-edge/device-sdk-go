@@ -6,10 +6,10 @@
 package provision
 
 import (
-	"github.com/edgexfoundry/device-sdk-go/v3/internal/cache"
-	"github.com/edgexfoundry/go-mod-bootstrap/v3/bootstrap/interfaces"
-	"github.com/edgexfoundry/go-mod-core-contracts/v3/clients/logger"
-	"github.com/edgexfoundry/go-mod-core-contracts/v3/dtos/requests"
+	"github.com/agile-edgex/device-sdk-go/v3/internal/cache"
+	"github.com/agile-edgex/go-mod-bootstrap/v3/bootstrap/interfaces"
+	"github.com/agile-edgex/go-mod-core-contracts/v3/clients/logger"
+	"github.com/agile-edgex/go-mod-core-contracts/v3/dtos/requests"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 	"net/url"
@@ -25,10 +25,10 @@ func Test_processDevices(t *testing.T) {
 		expectedNumDevices int
 	}{
 		{"valid load device from file", path.Join("..", "..", "example", "cmd", "device-simple", "res", "devices", "simple-device.yml"), nil, 1},
-		{"valid load devices from uri", "https://raw.githubusercontent.com/edgexfoundry/device-virtual-go/main/cmd/res/devices/devices.yaml", nil, 5},
+		{"valid load devices from uri", "https://raw.githubusercontent.com/agile-edgex/device-virtual-go/main/cmd/res/devices/devices.yaml", nil, 5},
 		{"invalid load device empty path", "", nil, 0},
 		{"invalid load device from file", path.Join("..", "..", "example", "cmd", "device-simple", "res", "devices", "bogus.yml"), nil, 0},
-		{"invalid load device invalid uri", "https://raw.githubusercontent.com/edgexfoundry/device-sdk-go/main/example/cmd/device-simple/res/devices/bogus.yml", nil, 0},
+		{"invalid load device invalid uri", "https://raw.githubusercontent.com/agile-edgex/device-sdk-go/main/example/cmd/device-simple/res/devices/bogus.yml", nil, 0},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
@@ -52,12 +52,12 @@ func Test_loadDevicesFromURI(t *testing.T) {
 		expectedEdgexErrMsg string
 	}{
 		{"valid load from uri",
-			"https://raw.githubusercontent.com/edgexfoundry/device-sdk-go/main/internal/provision/uri-test-files/devices/index.json",
+			"https://raw.githubusercontent.com/agile-edgex/device-sdk-go/main/internal/provision/uri-test-files/devices/index.json",
 			"TestDevice",
 			nil,
 			2, ""},
 		{"invalid load from uri",
-			"https://raw.githubusercontent.com/edgexfoundry/device-sdk-go/main/internal/provision/uri-test-files/devices/bogus.json",
+			"https://raw.githubusercontent.com/agile-edgex/device-sdk-go/main/internal/provision/uri-test-files/devices/bogus.json",
 			"TestDevice",
 			nil,
 			0, "failed to load Devices list from URI"},

@@ -24,14 +24,14 @@ import (
 	"net/http/httptest"
 	"testing"
 
-	bootstrapContainer "github.com/edgexfoundry/go-mod-bootstrap/v3/bootstrap/container"
-	"github.com/edgexfoundry/go-mod-bootstrap/v3/di"
-	"github.com/edgexfoundry/go-mod-core-contracts/v3/clients/logger"
-	"github.com/edgexfoundry/go-mod-core-contracts/v3/common"
+	bootstrapContainer "github.com/agile-edgex/go-mod-bootstrap/v3/bootstrap/container"
+	"github.com/agile-edgex/go-mod-bootstrap/v3/di"
+	"github.com/agile-edgex/go-mod-core-contracts/v3/clients/logger"
+	"github.com/agile-edgex/go-mod-core-contracts/v3/common"
 	"github.com/stretchr/testify/assert"
 
-	"github.com/edgexfoundry/device-sdk-go/v3/internal/config"
-	"github.com/edgexfoundry/device-sdk-go/v3/internal/container"
+	"github.com/agile-edgex/device-sdk-go/v3/internal/config"
+	"github.com/agile-edgex/device-sdk-go/v3/internal/container"
 
 	"github.com/google/uuid"
 	"github.com/labstack/echo/v4"

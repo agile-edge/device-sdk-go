@@ -10,12 +10,12 @@ import (
 	"math"
 	"testing"
 
-	"github.com/edgexfoundry/go-mod-core-contracts/v3/common"
-	"github.com/edgexfoundry/go-mod-core-contracts/v3/errors"
+	"github.com/agile-edgex/go-mod-core-contracts/v3/common"
+	"github.com/agile-edgex/go-mod-core-contracts/v3/errors"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	"github.com/edgexfoundry/device-sdk-go/v3/pkg/models"
+	"github.com/agile-edgex/device-sdk-go/v3/pkg/models"
 )
 
 func Test_transformReadBase(t *testing.T) {

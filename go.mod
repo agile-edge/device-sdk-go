@@ -1,12 +1,12 @@
-module github.com/edgexfoundry/device-sdk-go/v3
+module github.com/agile-edgex/device-sdk-go/v3
 
 go 1.21
 
 require (
 	github.com/OneOfOne/xxhash v1.2.8
-	github.com/edgexfoundry/go-mod-bootstrap/v3 v3.1.0
-	github.com/edgexfoundry/go-mod-core-contracts/v3 v3.1.0
-	github.com/edgexfoundry/go-mod-messaging/v3 v3.1.0
+	github.com/agile-edgex/go-mod-bootstrap/v3 v3.1.0
+	github.com/agile-edgex/go-mod-core-contracts/v3 v3.1.0
+	github.com/agile-edgex/go-mod-messaging/v3 v3.1.0
 	github.com/google/uuid v1.6.0
 	github.com/hashicorp/go-multierror v1.1.1
 	github.com/labstack/echo/v4 v4.11.2
@@ -17,13 +17,13 @@ require (
 
 require (
 	github.com/Microsoft/go-winio v0.6.1 // indirect
+	github.com/agile-edgex/go-mod-configuration/v3 v3.1.0 // indirect
+	github.com/agile-edgex/go-mod-registry/v3 v3.1.0 // indirect
+	github.com/agile-edgex/go-mod-secrets/v3 v3.1.0 // indirect
 	github.com/armon/go-metrics v0.4.1 // indirect
 	github.com/cenkalti/backoff v2.2.1+incompatible // indirect
 	github.com/davecgh/go-spew v1.1.2-0.20180830191138-d8f796af33cc // indirect
 	github.com/eclipse/paho.mqtt.golang v1.4.3 // indirect
-	github.com/edgexfoundry/go-mod-configuration/v3 v3.1.0 // indirect
-	github.com/edgexfoundry/go-mod-registry/v3 v3.1.0 // indirect
-	github.com/edgexfoundry/go-mod-secrets/v3 v3.1.0 // indirect
 	github.com/fatih/color v1.14.1 // indirect
 	github.com/fxamacker/cbor/v2 v2.5.0 // indirect
 	github.com/gabriel-vasile/mimetype v1.4.2 // indirect

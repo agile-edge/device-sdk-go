@@ -6,11 +6,11 @@
 package provision
 
 import (
-	"github.com/edgexfoundry/device-sdk-go/v3/internal/cache"
-	"github.com/edgexfoundry/go-mod-bootstrap/v3/bootstrap/interfaces"
-	"github.com/edgexfoundry/go-mod-core-contracts/v3/clients/logger"
-	"github.com/edgexfoundry/go-mod-core-contracts/v3/dtos"
-	"github.com/edgexfoundry/go-mod-core-contracts/v3/dtos/requests"
+	"github.com/agile-edgex/device-sdk-go/v3/internal/cache"
+	"github.com/agile-edgex/go-mod-bootstrap/v3/bootstrap/interfaces"
+	"github.com/agile-edgex/go-mod-core-contracts/v3/clients/logger"
+	"github.com/agile-edgex/go-mod-core-contracts/v3/dtos"
+	"github.com/agile-edgex/go-mod-core-contracts/v3/dtos/requests"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 	"net/url"
@@ -26,10 +26,10 @@ func Test_processProvisionWatcherFile(t *testing.T) {
 		expectedNumProvisionWatchers int
 	}{
 		{"valid load provision watcher from file", path.Join("..", "..", "example", "cmd", "device-simple", "res", "provisionwatchers", "Simple-Provision-Watcher.yml"), nil, 1},
-		{"valid load provision watcher from valid uri", "https://raw.githubusercontent.com/edgexfoundry/device-sdk-go/main/example/cmd/device-simple/res/provisionwatchers/Simple-Provision-Watcher.yml", nil, 1},
+		{"valid load provision watcher from valid uri", "https://raw.githubusercontent.com/agile-edgex/device-sdk-go/main/example/cmd/device-simple/res/provisionwatchers/Simple-Provision-Watcher.yml", nil, 1},
 		{"invalid load provision watcher empty path", "", nil, 0},
 		{"invalid load provision watcher from file", path.Join("..", "..", "example", "cmd", "device-simple", "res", "provisionwatchers", "bogus.yml"), nil, 0},
-		{"invalid load provision watcher from invalid uri", "https://raw.githubusercontent.com/edgexfoundry/device-sdk-go/main/example/cmd/device-simple/res/provisionwatchers/bogus.yml", nil, 0},
+		{"invalid load provision watcher from invalid uri", "https://raw.githubusercontent.com/agile-edgex/device-sdk-go/main/example/cmd/device-simple/res/provisionwatchers/bogus.yml", nil, 0},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
@@ -54,17 +54,17 @@ func Test_loadProvisionWatchersFromURI(t *testing.T) {
 		expectedEdgexErrMsg          string
 	}{
 		{"valid load from uri",
-			"https://raw.githubusercontent.com/edgexfoundry/device-sdk-go/main/internal/provision/uri-test-files/provisionwatchers/index.json",
+			"https://raw.githubusercontent.com/agile-edgex/device-sdk-go/main/internal/provision/uri-test-files/provisionwatchers/index.json",
 			nil,
 			nil,
 			2, ""},
 		{"valid load from uri with existing provision watcher",
-			"https://raw.githubusercontent.com/edgexfoundry/device-sdk-go/main/internal/provision/uri-test-files/provisionwatchers/index.json",
+			"https://raw.githubusercontent.com/agile-edgex/device-sdk-go/main/internal/provision/uri-test-files/provisionwatchers/index.json",
 			&dtos.ProvisionWatcher{Name: "Simple-Provision-Watcher"},
 			nil,
 			1, ""},
 		{"invalid load from uri",
-			"https://raw.githubusercontent.com/edgexfoundry/device-sdk-go/main/internal/provision/uri-test-files/provisionwatchers/bogus.json",
+			"https://raw.githubusercontent.com/agile-edgex/device-sdk-go/main/internal/provision/uri-test-files/provisionwatchers/bogus.json",
 			nil,
 			nil,
 			0, "failed to load Provision Watchers list from URI"},

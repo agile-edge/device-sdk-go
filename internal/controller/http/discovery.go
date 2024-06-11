@@ -9,12 +9,12 @@ package http
 import (
 	"net/http"
 
-	"github.com/edgexfoundry/go-mod-core-contracts/v3/common"
-	"github.com/edgexfoundry/go-mod-core-contracts/v3/errors"
-	"github.com/edgexfoundry/go-mod-core-contracts/v3/models"
+	"github.com/agile-edgex/go-mod-core-contracts/v3/common"
+	"github.com/agile-edgex/go-mod-core-contracts/v3/errors"
+	"github.com/agile-edgex/go-mod-core-contracts/v3/models"
 
-	"github.com/edgexfoundry/device-sdk-go/v3/internal/autodiscovery"
-	"github.com/edgexfoundry/device-sdk-go/v3/internal/container"
+	"github.com/agile-edgex/device-sdk-go/v3/internal/autodiscovery"
+	"github.com/agile-edgex/device-sdk-go/v3/internal/container"
 
 	"github.com/labstack/echo/v4"
 )

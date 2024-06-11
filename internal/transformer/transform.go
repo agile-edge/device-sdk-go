@@ -10,16 +10,16 @@ import (
 	"sync"
 	"time"
 
-	"github.com/edgexfoundry/device-sdk-go/v3/internal/cache"
-	sdkCommon "github.com/edgexfoundry/device-sdk-go/v3/internal/common"
-	"github.com/edgexfoundry/device-sdk-go/v3/internal/container"
-	"github.com/edgexfoundry/device-sdk-go/v3/pkg/models"
+	"github.com/agile-edgex/device-sdk-go/v3/internal/cache"
+	sdkCommon "github.com/agile-edgex/device-sdk-go/v3/internal/common"
+	"github.com/agile-edgex/device-sdk-go/v3/internal/container"
+	"github.com/agile-edgex/device-sdk-go/v3/pkg/models"
 
-	bootstrapContainer "github.com/edgexfoundry/go-mod-bootstrap/v3/bootstrap/container"
-	"github.com/edgexfoundry/go-mod-bootstrap/v3/di"
-	"github.com/edgexfoundry/go-mod-core-contracts/v3/common"
-	"github.com/edgexfoundry/go-mod-core-contracts/v3/dtos"
-	"github.com/edgexfoundry/go-mod-core-contracts/v3/errors"
+	bootstrapContainer "github.com/agile-edgex/go-mod-bootstrap/v3/bootstrap/container"
+	"github.com/agile-edgex/go-mod-bootstrap/v3/di"
+	"github.com/agile-edgex/go-mod-core-contracts/v3/common"
+	"github.com/agile-edgex/go-mod-core-contracts/v3/dtos"
+	"github.com/agile-edgex/go-mod-core-contracts/v3/errors"
 )
 
 var (

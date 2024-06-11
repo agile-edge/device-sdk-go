@@ -11,11 +11,11 @@ import (
 	"sync"
 	"time"
 
-	bootstrapContainer "github.com/edgexfoundry/go-mod-bootstrap/v3/bootstrap/container"
-	"github.com/edgexfoundry/go-mod-bootstrap/v3/bootstrap/startup"
-	"github.com/edgexfoundry/go-mod-bootstrap/v3/di"
+	bootstrapContainer "github.com/agile-edgex/go-mod-bootstrap/v3/bootstrap/container"
+	"github.com/agile-edgex/go-mod-bootstrap/v3/bootstrap/startup"
+	"github.com/agile-edgex/go-mod-bootstrap/v3/di"
 
-	"github.com/edgexfoundry/device-sdk-go/v3/internal/container"
+	"github.com/agile-edgex/device-sdk-go/v3/internal/container"
 )
 
 func BootstrapHandler(

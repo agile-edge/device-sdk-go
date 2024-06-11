@@ -11,8 +11,8 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/edgexfoundry/device-sdk-go/v3/pkg/interfaces"
-	"github.com/edgexfoundry/device-sdk-go/v3/pkg/service"
+	"github.com/agile-edgex/device-sdk-go/v3/pkg/interfaces"
+	"github.com/agile-edgex/device-sdk-go/v3/pkg/service"
 )
 
 func Bootstrap(serviceKey string, serviceVersion string, driver interfaces.ProtocolDriver) {
