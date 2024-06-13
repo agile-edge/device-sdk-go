@@ -9,6 +9,8 @@ package autoevent
 import (
 	"context"
 	"fmt"
+	"math"
+	"strconv"
 	"sync"
 	"time"
 
@@ -29,6 +31,7 @@ type Executor struct {
 	deviceName   string
 	sourceName   string
 	onChange     bool
+	step         float64
 	lastReadings map[string]interface{}
 	duration     time.Duration
 	stop         bool
@@ -58,7 +61,7 @@ func (e *Executor) Run(ctx context.Context, wg *sync.WaitGroup, buffer chan bool
 
 			if evt != nil {
 				if e.onChange {
-					if e.compareReadings(evt.Readings) {
+					if e.compareReadings(evt.Readings, dic) {
 						lc.Debugf("AutoEvent - readings are the same as previous one")
 						continue
 					}
@@ -93,7 +96,7 @@ func readResource(e *Executor, dic *di.Container) (event *dtos.Event, err errors
 	return res, nil
 }
 
-func (e *Executor) compareReadings(readings []dtos.BaseReading) bool {
+func (e *Executor) compareReadings(readings []dtos.BaseReading, dic *di.Container) bool {
 	e.mutex.Lock()
 	defer e.mutex.Unlock()
 
@@ -112,7 +115,32 @@ func (e *Executor) compareReadings(readings []dtos.BaseReading) bool {
 					result = false
 				}
 			} else {
-				if lastReading != reading.Value {
+				var compareResult = func() bool {
+					if e.step <= 0.0 {
+						return true
+					}
+					if strVal, ok := lastReading.(string); ok {
+						lc := bootstrapContainer.LoggingClientFrom(dic.Get)
+						lastReadingVal, err := strconv.ParseFloat(strVal, 64)
+						if err != nil {
+							lc.Debugf("AutoEvent - %s is not a number", strVal)
+							return true
+						}
+
+						readingVal, err := strconv.ParseFloat(reading.Value, 64)
+						if err != nil {
+							lc.Debugf("AutoEvent - %s is not a number", strVal)
+							return true
+						}
+
+						if math.Abs(readingVal-lastReadingVal) < e.step {
+							return false
+						}
+					}
+
+					return true
+				}
+				if lastReading != reading.Value && compareResult() {
 					e.lastReadings[reading.ResourceName] = reading.Value
 					result = false
 				}
@@ -154,6 +182,7 @@ func NewExecutor(deviceName string, ae models.AutoEvent) (*Executor, errors.Edge
 		deviceName: deviceName,
 		sourceName: ae.SourceName,
 		onChange:   ae.OnChange,
+		step:       ae.Step,
 		duration:   duration,
 		stop:       false,
 		mutex:      &sync.Mutex{}}, nil
