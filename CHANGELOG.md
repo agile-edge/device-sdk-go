@@ -460,7 +460,7 @@
 ### Documentation 📖
 - Add badges to readme ([#c8eb33a](https://github.com/agile-edgex/device-sdk-go/commits/c8eb33a))
 - update v2 API swagger file ([#97747a4](https://github.com/agile-edgex/device-sdk-go/commits/97747a4))
-- **v2:** update schema to be consistent with edgex-go ([#15155f8](https://github.com/agile-edgex/device-sdk-go/commits/15155f8))
+- **v2:** update schema to be consistent with edgex ([#15155f8](https://github.com/agile-edgex/device-sdk-go/commits/15155f8))
 ### Build 👷
 - update snap build to use go1.16 via a build-snap ([#bb5fdaa](https://github.com/agile-edgex/device-sdk-go/commits/bb5fdaa))
 - upgrade Golang to 1.16 ([#9773bb9](https://github.com/agile-edgex/device-sdk-go/commits/9773bb9))
