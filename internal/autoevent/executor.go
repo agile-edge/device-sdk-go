@@ -52,7 +52,7 @@ func (e *Executor) Run(ctx context.Context, wg *sync.WaitGroup, buffer chan bool
 			if e.stop {
 				return
 			}
-			lc.Debugf("AutoEvent - reading %s", e.sourceName)
+			lc.Tracef("AutoEvent - reading %s", e.sourceName)
 			evt, err := readResource(e, dic)
 			if err != nil {
 				lc.Errorf("AutoEvent - error occurs when reading resource %s: %v", e.sourceName, err)
@@ -62,7 +62,7 @@ func (e *Executor) Run(ctx context.Context, wg *sync.WaitGroup, buffer chan bool
 			if evt != nil {
 				if e.onChange {
 					if e.compareReadings(evt.Readings, dic) {
-						lc.Debugf("AutoEvent - readings are the same as previous one")
+						lc.Tracef("AutoEvent - readings are the same as previous one")
 						continue
 					}
 				}
@@ -78,7 +78,7 @@ func (e *Executor) Run(ctx context.Context, wg *sync.WaitGroup, buffer chan bool
 					<-buffer
 				}()
 			} else {
-				lc.Debugf("AutoEvent - no event generated when reading resource %s", e.sourceName)
+				lc.Tracef("AutoEvent - no event generated when reading resource %s", e.sourceName)
 			}
 		}
 	}
