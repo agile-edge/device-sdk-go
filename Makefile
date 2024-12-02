@@ -9,8 +9,8 @@ VERSION=$(shell cat ./VERSION 2>/dev/null || echo 0.0.0)
 SDKVERSION=$(VERSION)
 DOCKER_TAG=$(VERSION)-dev
 
-GOFLAGS=-ldflags "-X github.com/agile-edgex/device-sdk-go/v3.Version=$(VERSION) \
-                  -X github.com/agile-edgex/device-sdk-go/v3/internal/common.SDKVersion=$(SDKVERSION)" -trimpath -mod=readonly
+GOFLAGS=-ldflags "-X github.com/agile-edge/device-sdk-go/v3.Version=$(VERSION) \
+                  -X github.com/agile-edge/device-sdk-go/v3/internal/common.SDKVersion=$(SDKVERSION)" -trimpath -mod=readonly
 
 GOTESTFLAGS?=-race
 
@@ -30,8 +30,8 @@ docker:
 	docker build \
 		-f example/cmd/device-simple/Dockerfile \
 		--label "git_sha=$(GIT_SHA)" \
-		-t agile-edgex/device-simple:$(GIT_SHA) \
-		-t agile-edgex/device-simple:$(DOCKER_TAG) \
+		-t agile-edge/device-simple:$(GIT_SHA) \
+		-t agile-edge/device-simple:$(DOCKER_TAG) \
 		.
 
 unittest:

@@ -11,16 +11,17 @@ package service
 import (
 	"context"
 	"fmt"
-	"github.com/agile-edgex/go-mod-bootstrap/v3/bootstrap/container"
-	"github.com/agile-edgex/go-mod-core-contracts/v3/common"
-	"github.com/agile-edgex/go-mod-core-contracts/v3/dtos"
-	commonDTO "github.com/agile-edgex/go-mod-core-contracts/v3/dtos/common"
-	"github.com/agile-edgex/go-mod-core-contracts/v3/dtos/requests"
-	"github.com/agile-edgex/go-mod-core-contracts/v3/errors"
-	"github.com/agile-edgex/go-mod-core-contracts/v3/models"
+
+	"github.com/agile-edge/go-mod-bootstrap/v3/bootstrap/container"
+	"github.com/agile-edge/go-mod-core-contracts/v3/common"
+	"github.com/agile-edge/go-mod-core-contracts/v3/dtos"
+	commonDTO "github.com/agile-edge/go-mod-core-contracts/v3/dtos/common"
+	"github.com/agile-edge/go-mod-core-contracts/v3/dtos/requests"
+	"github.com/agile-edge/go-mod-core-contracts/v3/errors"
+	"github.com/agile-edge/go-mod-core-contracts/v3/models"
 	"github.com/google/uuid"
 
-	"github.com/agile-edgex/device-sdk-go/v3/internal/cache"
+	"github.com/agile-edge/device-sdk-go/v3/internal/cache"
 )
 
 // AddDevice adds a new Device to the Device Service and Core Metadata

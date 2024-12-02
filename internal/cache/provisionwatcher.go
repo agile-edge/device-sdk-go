@@ -9,8 +9,8 @@ import (
 	"fmt"
 	"sync"
 
-	"github.com/agile-edgex/go-mod-core-contracts/v3/errors"
-	"github.com/agile-edgex/go-mod-core-contracts/v3/models"
+	"github.com/agile-edge/go-mod-core-contracts/v3/errors"
+	"github.com/agile-edge/go-mod-core-contracts/v3/models"
 )
 
 var (

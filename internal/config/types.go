@@ -9,7 +9,7 @@
 package config
 
 import (
-	"github.com/agile-edgex/go-mod-bootstrap/v3/config"
+	"github.com/agile-edge/go-mod-bootstrap/v3/config"
 )
 
 // WritableInfo is a struct which contains configuration settings that can be changed in the Registry .

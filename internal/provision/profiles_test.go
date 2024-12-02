@@ -8,18 +8,19 @@ package provision
 import (
 	"context"
 	goErrors "errors"
-	"github.com/agile-edgex/device-sdk-go/v3/internal/cache"
-	"github.com/agile-edgex/go-mod-bootstrap/v3/bootstrap/interfaces"
-	"github.com/agile-edgex/go-mod-core-contracts/v3/clients/logger"
-	"github.com/agile-edgex/go-mod-core-contracts/v3/dtos"
-	"github.com/agile-edgex/go-mod-core-contracts/v3/dtos/requests"
-	"github.com/agile-edgex/go-mod-core-contracts/v3/dtos/responses"
-	"github.com/agile-edgex/go-mod-core-contracts/v3/errors"
-	"github.com/stretchr/testify/assert"
-	"github.com/stretchr/testify/require"
 	"net/url"
 	"path"
 	"testing"
+
+	"github.com/agile-edge/device-sdk-go/v3/internal/cache"
+	"github.com/agile-edge/go-mod-bootstrap/v3/bootstrap/interfaces"
+	"github.com/agile-edge/go-mod-core-contracts/v3/clients/logger"
+	"github.com/agile-edge/go-mod-core-contracts/v3/dtos"
+	"github.com/agile-edge/go-mod-core-contracts/v3/dtos/requests"
+	"github.com/agile-edge/go-mod-core-contracts/v3/dtos/responses"
+	"github.com/agile-edge/go-mod-core-contracts/v3/errors"
+	"github.com/stretchr/testify/assert"
+	"github.com/stretchr/testify/require"
 )
 
 var simpleProfile = responses.DeviceProfileResponse{
@@ -168,13 +169,13 @@ func Test_processProfiles(t *testing.T) {
 	}{
 		{"valid load profile from file, profile exists", path.Join("..", "..", "example", "cmd", "device-simple", "res", "profiles", "Simple-Driver.yaml"), nil, "Simple-Device", simpleProfile, nil, 0, ""},
 		{"valid load profile from file, profile does not exist in metadata", path.Join("..", "..", "example", "cmd", "device-simple", "res", "profiles", "Simple-Driver.yaml"), nil, "Simple-Device", responses.DeviceProfileResponse{}, errors.NewCommonEdgeXWrapper(goErrors.New("could not find profile")), 1, ""},
-		{"valid load profile from uri, profile exists", "https://raw.githubusercontent.com/agile-edgex/device-sdk-go/main/example/cmd/device-simple/res/profiles/Simple-Driver.yaml", nil, "Simple-Device", simpleProfile, nil, 0, ""},
-		{"valid load profile from uri, profile does not exist in metadata", "https://raw.githubusercontent.com/agile-edgex/device-sdk-go/main/example/cmd/device-simple/res/profiles/Simple-Driver.yaml", nil, "Simple-Device", responses.DeviceProfileResponse{}, errors.NewCommonEdgeXWrapper(goErrors.New("could not find profile")), 1, ""},
+		{"valid load profile from uri, profile exists", "https://raw.githubusercontent.com/agile-edge/device-sdk-go/main/example/cmd/device-simple/res/profiles/Simple-Driver.yaml", nil, "Simple-Device", simpleProfile, nil, 0, ""},
+		{"valid load profile from uri, profile does not exist in metadata", "https://raw.githubusercontent.com/agile-edge/device-sdk-go/main/example/cmd/device-simple/res/profiles/Simple-Driver.yaml", nil, "Simple-Device", responses.DeviceProfileResponse{}, errors.NewCommonEdgeXWrapper(goErrors.New("could not find profile")), 1, ""},
 		{"invalid load empty profile from file", "", nil, "Simple-Device", responses.DeviceProfileResponse{}, errors.NewCommonEdgeXWrapper(goErrors.New("could not find profile")), 0, ""},
 		{"invalid load profile from bogus file", path.Join("..", "..", "example", "cmd", "device-simple", "res", "profiles", "bogus.yaml"), nil, "Simple-Device", responses.DeviceProfileResponse{}, nil, 0, ""},
-		{"invalid load profile from bogus uri", "https://raw.githubusercontent.com/agile-edgex/device-sdk-go/main/example/cmd/device-simple/res/profiles/bogus.yaml", nil, "Simple-Device", responses.DeviceProfileResponse{}, nil, 0, ""},
+		{"invalid load profile from bogus uri", "https://raw.githubusercontent.com/agile-edge/device-sdk-go/main/example/cmd/device-simple/res/profiles/bogus.yaml", nil, "Simple-Device", responses.DeviceProfileResponse{}, nil, 0, ""},
 		{"invalid load profile from file, duplicate profile", path.Join("..", "..", "example", "cmd", "device-simple", "res", "profiles", "Simple-Driver.yaml"), nil, "Simple-Device", profile, nil, 0, "Profile testProfile has already existed in cache"},
-		{"invalid load profile from uri, duplicate profile", "https://raw.githubusercontent.com/agile-edgex/device-sdk-go/main/example/cmd/device-simple/res/profiles/Simple-Driver.yaml", nil, "Simple-Device", profile, nil, 0, "Profile testProfile has already existed in cache"},
+		{"invalid load profile from uri, duplicate profile", "https://raw.githubusercontent.com/agile-edge/device-sdk-go/main/example/cmd/device-simple/res/profiles/Simple-Driver.yaml", nil, "Simple-Device", profile, nil, 0, "Profile testProfile has already existed in cache"},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
@@ -206,28 +207,28 @@ func Test_loadProfilesFromURI(t *testing.T) {
 		expectedEdgexErrMsg string
 	}{
 		{"valid load from uri, profile exists",
-			"https://raw.githubusercontent.com/agile-edgex/device-sdk-go/main/internal/provision/uri-test-files/profiles/index.json",
+			"https://raw.githubusercontent.com/agile-edge/device-sdk-go/main/internal/provision/uri-test-files/profiles/index.json",
 			nil,
 			[]string{"Simple-Device", "Simple-Device2"},
 			[]responses.DeviceProfileResponse{simpleProfile, simpleProfile},
 			[]errors.EdgeX{nil, nil},
 			0, ""},
 		{"valid load from uri, profile does not exist in metadata",
-			"https://raw.githubusercontent.com/agile-edgex/device-sdk-go/main/internal/provision/uri-test-files/profiles/index.json",
+			"https://raw.githubusercontent.com/agile-edge/device-sdk-go/main/internal/provision/uri-test-files/profiles/index.json",
 			nil,
 			[]string{"Simple-Device", "Simple-Device2"},
 			[]responses.DeviceProfileResponse{responses.DeviceProfileResponse{}, responses.DeviceProfileResponse{}},
 			[]errors.EdgeX{errors.NewCommonEdgeXWrapper(goErrors.New("could not find profile")), errors.NewCommonEdgeXWrapper(goErrors.New("could not find profile"))},
 			2, ""},
 		{"valid load where one profile exists and one profile does not exist in metadata",
-			"https://raw.githubusercontent.com/agile-edgex/device-sdk-go/main/internal/provision/uri-test-files/profiles/index.json",
+			"https://raw.githubusercontent.com/agile-edge/device-sdk-go/main/internal/provision/uri-test-files/profiles/index.json",
 			nil,
 			[]string{"Simple-Device", "Simple-Device2"},
 			[]responses.DeviceProfileResponse{simpleProfile, responses.DeviceProfileResponse{}},
 			[]errors.EdgeX{nil, errors.NewCommonEdgeXWrapper(goErrors.New("could not find profile"))},
 			1, ""},
 		{"invalid load profile path join breaks",
-			"https://raw.githubusercontent.com/agile-edgex/device-sdk-go/main/internal/provision/uri-test-files/profiles/bogus.json",
+			"https://raw.githubusercontent.com/agile-edge/device-sdk-go/main/internal/provision/uri-test-files/profiles/bogus.json",
 			nil,
 			[]string{},
 			[]responses.DeviceProfileResponse{},

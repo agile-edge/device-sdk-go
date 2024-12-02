@@ -6,12 +6,13 @@
 package provision
 
 import (
-	"github.com/agile-edgex/go-mod-core-contracts/v3/clients/logger"
-	"github.com/stretchr/testify/assert"
-	"github.com/stretchr/testify/require"
 	"net/url"
 	"path"
 	"testing"
+
+	"github.com/agile-edge/go-mod-core-contracts/v3/clients/logger"
+	"github.com/stretchr/testify/assert"
+	"github.com/stretchr/testify/require"
 )
 
 func Test_GetFileType(t *testing.T) {
@@ -46,9 +47,9 @@ func Test_GetFullAndRedactedURI(t *testing.T) {
 		expectedURI      string
 		expectedRedacted string
 	}{
-		{"valid no secret uri", "https://raw.githubusercontent.com/agile-edgex/device-virtual-go/main/cmd/res/devices/devices.yaml", "device-simple.yaml", "https://raw.githubusercontent.com/agile-edgex/device-virtual-go/main/cmd/res/devices/device-simple.yaml", "https://raw.githubusercontent.com/agile-edgex/device-virtual-go/main/cmd/res/devices/device-simple.yaml"},
-		{"valid query secret uri", "https://raw.githubusercontent.com/agile-edgex/device-simple/main/devices/index.json?edgexSecretName=githubCredentials", "device-simple.yaml", "https://raw.githubusercontent.com/agile-edgex/device-simple/main/devices/device-simple.yaml?edgexSecretName=githubCredentials", "https://raw.githubusercontent.com/agile-edgex/device-simple/main/devices/device-simple.yaml?edgexSecretName=githubCredentials"},
-		{"valid query secret uri", "https://myuser:mypassword@raw.githubusercontent.com/agile-edgex/device-simple/main/devices/index.json", "device-simple.yaml", "https://myuser:mypassword@raw.githubusercontent.com/agile-edgex/device-simple/main/devices/device-simple.yaml", "https://myuser:xxxxx@raw.githubusercontent.com/agile-edgex/device-simple/main/devices/device-simple.yaml"},
+		{"valid no secret uri", "https://raw.githubusercontent.com/agile-edge/device-virtual-go/main/cmd/res/devices/devices.yaml", "device-simple.yaml", "https://raw.githubusercontent.com/agile-edge/device-virtual-go/main/cmd/res/devices/device-simple.yaml", "https://raw.githubusercontent.com/agile-edge/device-virtual-go/main/cmd/res/devices/device-simple.yaml"},
+		{"valid query secret uri", "https://raw.githubusercontent.com/agile-edge/device-simple/main/devices/index.json?edgexSecretName=githubCredentials", "device-simple.yaml", "https://raw.githubusercontent.com/agile-edge/device-simple/main/devices/device-simple.yaml?edgexSecretName=githubCredentials", "https://raw.githubusercontent.com/agile-edge/device-simple/main/devices/device-simple.yaml?edgexSecretName=githubCredentials"},
+		{"valid query secret uri", "https://myuser:mypassword@raw.githubusercontent.com/agile-edge/device-simple/main/devices/index.json", "device-simple.yaml", "https://myuser:mypassword@raw.githubusercontent.com/agile-edge/device-simple/main/devices/device-simple.yaml", "https://myuser:xxxxx@raw.githubusercontent.com/agile-edge/device-simple/main/devices/device-simple.yaml"},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {

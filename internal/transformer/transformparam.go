@@ -8,10 +8,11 @@ package transformer
 
 import (
 	"fmt"
-	"github.com/agile-edgex/go-mod-core-contracts/v3/errors"
-	"github.com/agile-edgex/go-mod-core-contracts/v3/models"
 
-	dsModels "github.com/agile-edgex/device-sdk-go/v3/pkg/models"
+	"github.com/agile-edge/go-mod-core-contracts/v3/errors"
+	"github.com/agile-edge/go-mod-core-contracts/v3/models"
+
+	dsModels "github.com/agile-edge/device-sdk-go/v3/pkg/models"
 )
 
 func TransformWriteParameter(cv *dsModels.CommandValue, pv models.ResourceProperties) errors.EdgeX {

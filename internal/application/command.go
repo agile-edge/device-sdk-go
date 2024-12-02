@@ -18,20 +18,20 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/agile-edgex/go-mod-core-contracts/v3/clients/http/utils"
+	"github.com/agile-edge/go-mod-core-contracts/v3/clients/http/utils"
 
-	"github.com/agile-edgex/device-sdk-go/v3/internal/cache"
-	sdkCommon "github.com/agile-edgex/device-sdk-go/v3/internal/common"
-	"github.com/agile-edgex/device-sdk-go/v3/internal/container"
-	"github.com/agile-edgex/device-sdk-go/v3/internal/transformer"
-	sdkModels "github.com/agile-edgex/device-sdk-go/v3/pkg/models"
+	"github.com/agile-edge/device-sdk-go/v3/internal/cache"
+	sdkCommon "github.com/agile-edge/device-sdk-go/v3/internal/common"
+	"github.com/agile-edge/device-sdk-go/v3/internal/container"
+	"github.com/agile-edge/device-sdk-go/v3/internal/transformer"
+	sdkModels "github.com/agile-edge/device-sdk-go/v3/pkg/models"
 
-	bootstrapContainer "github.com/agile-edgex/go-mod-bootstrap/v3/bootstrap/container"
-	"github.com/agile-edgex/go-mod-bootstrap/v3/di"
-	"github.com/agile-edgex/go-mod-core-contracts/v3/common"
-	"github.com/agile-edgex/go-mod-core-contracts/v3/dtos"
-	"github.com/agile-edgex/go-mod-core-contracts/v3/errors"
-	"github.com/agile-edgex/go-mod-core-contracts/v3/models"
+	bootstrapContainer "github.com/agile-edge/go-mod-bootstrap/v3/bootstrap/container"
+	"github.com/agile-edge/go-mod-bootstrap/v3/di"
+	"github.com/agile-edge/go-mod-core-contracts/v3/common"
+	"github.com/agile-edge/go-mod-core-contracts/v3/dtos"
+	"github.com/agile-edge/go-mod-core-contracts/v3/errors"
+	"github.com/agile-edge/go-mod-core-contracts/v3/models"
 )
 
 func GetCommand(ctx context.Context, deviceName string, commandName string, queryParams string, regexCmd bool, dic *di.Container) (*dtos.Event, errors.EdgeX) {

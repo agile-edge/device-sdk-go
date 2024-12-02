@@ -21,14 +21,14 @@ import (
 	"strconv"
 	"time"
 
-	"github.com/agile-edgex/go-mod-core-contracts/v3/clients/logger"
-	"github.com/agile-edgex/go-mod-core-contracts/v3/common"
-	"github.com/agile-edgex/go-mod-core-contracts/v3/models"
+	"github.com/agile-edge/go-mod-core-contracts/v3/clients/logger"
+	"github.com/agile-edge/go-mod-core-contracts/v3/common"
+	"github.com/agile-edge/go-mod-core-contracts/v3/models"
 	gometrics "github.com/rcrowley/go-metrics"
 
-	"github.com/agile-edgex/device-sdk-go/v3/example/config"
-	"github.com/agile-edgex/device-sdk-go/v3/pkg/interfaces"
-	sdkModels "github.com/agile-edgex/device-sdk-go/v3/pkg/models"
+	"github.com/agile-edge/device-sdk-go/v3/example/config"
+	"github.com/agile-edge/device-sdk-go/v3/pkg/interfaces"
+	sdkModels "github.com/agile-edge/device-sdk-go/v3/pkg/models"
 )
 
 const readCommandsExecutedName = "ReadCommandsExecuted"

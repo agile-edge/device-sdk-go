@@ -10,18 +10,18 @@ package common
 import (
 	"context"
 
-	"github.com/agile-edgex/device-sdk-go/v3/internal/cache"
-	"github.com/agile-edgex/device-sdk-go/v3/internal/container"
+	"github.com/agile-edge/device-sdk-go/v3/internal/cache"
+	"github.com/agile-edge/device-sdk-go/v3/internal/container"
 
-	bootstrapContainer "github.com/agile-edgex/go-mod-bootstrap/v3/bootstrap/container"
-	bootstrapInterfaces "github.com/agile-edgex/go-mod-bootstrap/v3/bootstrap/interfaces"
-	"github.com/agile-edgex/go-mod-bootstrap/v3/di"
-	"github.com/agile-edgex/go-mod-core-contracts/v3/clients/interfaces"
-	"github.com/agile-edgex/go-mod-core-contracts/v3/clients/logger"
-	"github.com/agile-edgex/go-mod-core-contracts/v3/common"
-	"github.com/agile-edgex/go-mod-core-contracts/v3/dtos"
-	"github.com/agile-edgex/go-mod-core-contracts/v3/dtos/requests"
-	"github.com/agile-edgex/go-mod-messaging/v3/pkg/types"
+	bootstrapContainer "github.com/agile-edge/go-mod-bootstrap/v3/bootstrap/container"
+	bootstrapInterfaces "github.com/agile-edge/go-mod-bootstrap/v3/bootstrap/interfaces"
+	"github.com/agile-edge/go-mod-bootstrap/v3/di"
+	"github.com/agile-edge/go-mod-core-contracts/v3/clients/interfaces"
+	"github.com/agile-edge/go-mod-core-contracts/v3/clients/logger"
+	"github.com/agile-edge/go-mod-core-contracts/v3/common"
+	"github.com/agile-edge/go-mod-core-contracts/v3/dtos"
+	"github.com/agile-edge/go-mod-core-contracts/v3/dtos/requests"
+	"github.com/agile-edge/go-mod-messaging/v3/pkg/types"
 
 	gometrics "github.com/rcrowley/go-metrics"
 )

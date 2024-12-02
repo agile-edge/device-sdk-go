@@ -1,16 +1,16 @@
 # Go Device Service SDK
-[![Build Status](https://jenkins.agile-edgex.org/view/EdgeX%20Foundry%20Project/job/agile-edgex/job/device-sdk-go/job/main/badge/icon)](https://jenkins.agile-edgex.org/view/EdgeX%20Foundry%20Project/job/agile-edgex/job/device-sdk-go/job/main/) [![Code Coverage](https://codecov.io/gh/agile-edgex/device-sdk-go/branch/main/graph/badge.svg?token=NoUXyBZgt6)](https://codecov.io/gh/agile-edgex/device-sdk-go) [![Go Report Card](https://goreportcard.com/badge/github.com/agile-edgex/device-sdk-go)](https://goreportcard.com/report/github.com/agile-edgex/device-sdk-go) [![GitHub Latest Dev Tag)](https://img.shields.io/github/v/tag/agile-edgex/device-sdk-go?include_prereleases&sort=semver&label=latest-dev)](https://github.com/agile-edgex/device-sdk-go/tags) ![GitHub Latest Stable Tag)](https://img.shields.io/github/v/tag/agile-edgex/device-sdk-go?sort=semver&label=latest-stable) [![GitHub License](https://img.shields.io/github/license/agile-edgex/device-sdk-go)](https://choosealicense.com/licenses/apache-2.0/) ![GitHub go.mod Go version](https://img.shields.io/github/go-mod/go-version/agile-edgex/device-sdk-go) [![GitHub Pull Requests](https://img.shields.io/github/issues-pr-raw/agile-edgex/device-sdk-go)](https://github.com/agile-edgex/device-sdk-go/pulls) [![GitHub Contributors](https://img.shields.io/github/contributors/agile-edgex/device-sdk-go)](https://github.com/agile-edgex/device-sdk-go/contributors) [![GitHub Committers](https://img.shields.io/badge/team-committers-green)](https://github.com/orgs/agile-edgex/teams/device-sdk-go-committers/members) [![GitHub Commit Activity](https://img.shields.io/github/commit-activity/m/agile-edgex/device-sdk-go)](https://github.com/agile-edgex/device-sdk-go/commits)
+[![Build Status](https://jenkins.agile-edge.org/view/EdgeX%20Foundry%20Project/job/agile-edge/job/device-sdk-go/job/main/badge/icon)](https://jenkins.agile-edge.org/view/EdgeX%20Foundry%20Project/job/agile-edge/job/device-sdk-go/job/main/) [![Code Coverage](https://codecov.io/gh/agile-edge/device-sdk-go/branch/main/graph/badge.svg?token=NoUXyBZgt6)](https://codecov.io/gh/agile-edge/device-sdk-go) [![Go Report Card](https://goreportcard.com/badge/github.com/agile-edge/device-sdk-go)](https://goreportcard.com/report/github.com/agile-edge/device-sdk-go) [![GitHub Latest Dev Tag)](https://img.shields.io/github/v/tag/agile-edge/device-sdk-go?include_prereleases&sort=semver&label=latest-dev)](https://github.com/agile-edge/device-sdk-go/tags) ![GitHub Latest Stable Tag)](https://img.shields.io/github/v/tag/agile-edge/device-sdk-go?sort=semver&label=latest-stable) [![GitHub License](https://img.shields.io/github/license/agile-edge/device-sdk-go)](https://choosealicense.com/licenses/apache-2.0/) ![GitHub go.mod Go version](https://img.shields.io/github/go-mod/go-version/agile-edge/device-sdk-go) [![GitHub Pull Requests](https://img.shields.io/github/issues-pr-raw/agile-edge/device-sdk-go)](https://github.com/agile-edge/device-sdk-go/pulls) [![GitHub Contributors](https://img.shields.io/github/contributors/agile-edge/device-sdk-go)](https://github.com/agile-edge/device-sdk-go/contributors) [![GitHub Committers](https://img.shields.io/badge/team-committers-green)](https://github.com/orgs/agile-edge/teams/device-sdk-go-committers/members) [![GitHub Commit Activity](https://img.shields.io/github/commit-activity/m/agile-edge/device-sdk-go)](https://github.com/agile-edge/device-sdk-go/commits)
 
 
 ## Overview
 
-This repository is a set of Go packages that can be used to build Go-based [device services](https://docs.agile-edgex.org/2.1/microservices/device/Ch-DeviceServices/) for use within the EdgeX framework.
+This repository is a set of Go packages that can be used to build Go-based [device services](https://docs.agile-edge.org/2.1/microservices/device/Ch-DeviceServices/) for use within the EdgeX framework.
 
 ## Usage
 
-Developers can make their own device service by implementing the [`ProtocolDriver`](https://github.com/agile-edgex/device-sdk-go/blob/main/pkg/models/protocoldriver.go) interface for their desired IoT protocol, and the `main` function to start the Device Service. To implement the `main` function, the [`startup`](https://github.com/agile-edgex/device-sdk-go/tree/main/pkg/startup) package can be optionally leveraged, or developers can write customized bootstrap code by themselves.
+Developers can make their own device service by implementing the [`ProtocolDriver`](https://github.com/agile-edge/device-sdk-go/blob/main/pkg/models/protocoldriver.go) interface for their desired IoT protocol, and the `main` function to start the Device Service. To implement the `main` function, the [`startup`](https://github.com/agile-edge/device-sdk-go/tree/main/pkg/startup) package can be optionally leveraged, or developers can write customized bootstrap code by themselves.
 
-Please see the provided [simple device service](https://github.com/agile-edgex/device-sdk-go/tree/main/example) as an example, included in this repository.
+Please see the provided [simple device service](https://github.com/agile-edge/device-sdk-go/tree/main/example) as an example, included in this repository.
 
 ## Command Line Options
 
@@ -50,8 +50,8 @@ After v2, EdgeX only uses [scientific notation (`eNotation`)](#scientific-notati
 
 ## Community
 
-- Discussion: [https://github.com/orgs/agile-edgex/discussions](https://github.com/orgs/agile-edgex/discussions)
-- Mailing lists: [https://lists.agile-edgex.org/mailman/listinfo](https://lists.agile-edgex.org/mailman/listinfo)
+- Discussion: [https://github.com/orgs/agile-edge/discussions](https://github.com/orgs/agile-edge/discussions)
+- Mailing lists: [https://lists.agile-edge.org/mailman/listinfo](https://lists.agile-edge.org/mailman/listinfo)
 
 ## License
 
@@ -59,8 +59,8 @@ After v2, EdgeX only uses [scientific notation (`eNotation`)](#scientific-notati
 
 ## Versioning
 
-Please refer to the EdgeX Foundry [versioning policy](https://wiki.agile-edgex.org/pages/viewpage.action?pageId=21823969) for information on how EdgeX services are released and how EdgeX services are compatible with one another.  Specifically, device services (and the associated SDK), application services (and the associated app functions SDK), and client tools (like the EdgeX CLI and UI) can have independent minor releases, but these services must be compatible with the latest major release of EdgeX.
+Please refer to the EdgeX Foundry [versioning policy](https://wiki.agile-edge.org/pages/viewpage.action?pageId=21823969) for information on how EdgeX services are released and how EdgeX services are compatible with one another.  Specifically, device services (and the associated SDK), application services (and the associated app functions SDK), and client tools (like the EdgeX CLI and UI) can have independent minor releases, but these services must be compatible with the latest major release of EdgeX.
 
 ## Long Term Support
 
-Please refer to the EdgeX Foundry [LTS policy](https://wiki.agile-edgex.org/pages/viewpage.action?pageId=69173332) for information on support of EdgeX releases. The EdgeX community does not offer support on any non-LTS release outside of the latest release.
+Please refer to the EdgeX Foundry [LTS policy](https://wiki.agile-edge.org/pages/viewpage.action?pageId=69173332) for information on support of EdgeX releases. The EdgeX community does not offer support on any non-LTS release outside of the latest release.
