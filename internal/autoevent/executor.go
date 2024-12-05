@@ -52,7 +52,7 @@ func (e *Executor) Run(ctx context.Context, wg *sync.WaitGroup, buffer chan bool
 			if e.stop {
 				return
 			}
-			lc.Tracef("AutoEvent - reading %s", e.sourceName)
+			lc.Debugf("AutoEvent - reading %s", e.sourceName)
 			evt, err := readResource(e, dic)
 			if err != nil {
 				lc.Errorf("AutoEvent - error occurs when reading resource %s: %v", e.sourceName, err)
@@ -62,7 +62,7 @@ func (e *Executor) Run(ctx context.Context, wg *sync.WaitGroup, buffer chan bool
 			if evt != nil {
 				if e.onChange {
 					if e.compareReadings(evt.Readings, dic) {
-						lc.Tracef("AutoEvent - readings are the same as previous one")
+						lc.Debugf("AutoEvent - readings are the same as previous one")
 						continue
 					}
 				}
@@ -74,11 +74,11 @@ func (e *Executor) Run(ctx context.Context, wg *sync.WaitGroup, buffer chan bool
 					buffer <- true
 					correlationId := uuid.NewString()
 					sdkCommon.SendEvent(evt, correlationId, dic)
-					lc.Tracef("AutoEvent - Sent new Event/Reading for '%s' source with Correlation Id '%s'", evt.SourceName, correlationId)
+					lc.Debugf("AutoEvent - Sent new Event/Reading for '%s' source with Correlation Id '%s'", evt.SourceName, correlationId)
 					<-buffer
 				}()
 			} else {
-				lc.Tracef("AutoEvent - no event generated when reading resource %s", e.sourceName)
+				lc.Debugf("AutoEvent - no event generated when reading resource %s", e.sourceName)
 			}
 		}
 	}
