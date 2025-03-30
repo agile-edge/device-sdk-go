@@ -58,7 +58,7 @@ func (e *Executor) Run(ctx context.Context, wg *sync.WaitGroup, buffer chan bool
 				return
 			}
 			deadline = deadline.Add(e.duration)
-			lc.Debugf("AutoEvent - reading %s", e.sourceName)
+			lc.Tracef("AutoEvent - reading %s", e.sourceName)
 			evt, err := readResource(e, dic)
 			if err != nil {
 				lc.Errorf("AutoEvent - error occurs when reading resource %s: %v", e.sourceName, err)
@@ -68,7 +68,7 @@ func (e *Executor) Run(ctx context.Context, wg *sync.WaitGroup, buffer chan bool
 			if evt != nil {
 				if e.onChange {
 					if e.compareReadings(evt.Readings) {
-						lc.Debugf("AutoEvent - source '%s' readings are the same as previous one", e.sourceName)
+						lc.Tracef("AutoEvent - source '%s' readings are the same as previous one", e.sourceName)
 						continue
 					}
 				}
@@ -86,7 +86,7 @@ func (e *Executor) Run(ctx context.Context, wg *sync.WaitGroup, buffer chan bool
 					lc.Errorf("AutoEvent - error occurs when send new event/reading for %s source: %v", e.sourceName, err)
 				}
 			} else {
-				lc.Debugf("AutoEvent - no event generated when reading resource %s", e.sourceName)
+				lc.Tracef("AutoEvent - no event generated when reading resource %s", e.sourceName)
 			}
 		}
 	}

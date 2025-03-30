@@ -69,7 +69,7 @@ func GetCommand(ctx context.Context, deviceName string, commandName string, quer
 	}
 
 	lc := bootstrapContainer.LoggingClientFrom(dic.Get)
-	lc.Debugf("GET Device Command successfully. Device: %s, Source: %s, %s: %s", deviceName, commandName, common.CorrelationHeader, utils.FromContext(ctx, common.CorrelationHeader))
+	lc.Tracef("GET Device Command successfully. Device: %s, Source: %s, %s: %s", deviceName, commandName, common.CorrelationHeader, utils.FromContext(ctx, common.CorrelationHeader))
 
 	cache.Devices().SetLastConnectedByName(deviceName)
 	return res, nil
@@ -108,7 +108,7 @@ func SetCommand(ctx context.Context, deviceName string, commandName string, quer
 	}
 
 	lc := bootstrapContainer.LoggingClientFrom(dic.Get)
-	lc.Debugf("SET Device Command successfully. Device: %s, Source: %s, %s: %s", deviceName, commandName, common.CorrelationHeader, utils.FromContext(ctx, common.CorrelationHeader))
+	lc.Tracef("SET Device Command successfully. Device: %s, Source: %s, %s: %s", deviceName, commandName, common.CorrelationHeader, utils.FromContext(ctx, common.CorrelationHeader))
 
 	cache.Devices().SetLastConnectedByName(deviceName)
 	return event, nil
