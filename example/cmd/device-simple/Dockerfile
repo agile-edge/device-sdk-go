@@ -25,10 +25,14 @@ WORKDIR /device-sdk-go
 LABEL license='SPDX-License-Identifier: Apache-2.0' \
   copyright='Copyright (c) 2023: Intel'
 
-RUN apk add --update --no-cache make git
+RUN sed -i 's|https://dl-cdn.alpinelinux.org|https://mirrors.aliyun.com|g' /etc/apk/repositories && \
+    apk add --update --no-cache make git
 
-COPY go.mod vendor* ./
-RUN [ ! -d "vendor" ] && go mod download all || echo "skipping..."
+ARG GO_PROXY="https://goproxy.cn,direct"
+ENV GOPROXY=$GO_PROXY
+
+COPY go.* ./
+RUN go mod download
 
 COPY . .
 RUN ${MAKE}
@@ -38,9 +42,9 @@ FROM alpine:3.20
 LABEL license='SPDX-License-Identifier: Apache-2.0' \
   copyright='Copyright (c) 2022: Intel'
 
-RUN apk add --update --no-cache dumb-init
-# Ensure using latest versions of all installed packages to avoid any recent CVEs
-RUN apk --no-cache upgrade
+RUN sed -i 's|https://dl-cdn.alpinelinux.org|https://mirrors.aliyun.com|g' /etc/apk/repositories && \
+    apk add --update --no-cache dumb-init tzdata && \
+    apk --no-cache upgrade
 
 WORKDIR /
 COPY --from=builder /device-sdk-go/example/cmd/device-simple/Attribution.txt /Attribution.txt
@@ -49,5 +53,8 @@ COPY --from=builder /device-sdk-go/example/cmd/device-simple/res/ /res
 
 EXPOSE 59999
 
+ENV TZ=Asia/Shanghai
+RUN mkdir -p /var/log/agile-edge
+
 ENTRYPOINT ["/device-simple"]
-CMD ["-cp=consul.http://edgex-core-consul:8500", "--registry"]
+CMD ["-cp=consul.http://core-consul:8500", "--registry"]

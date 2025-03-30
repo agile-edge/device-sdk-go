@@ -12,7 +12,7 @@ MICROSERVICES=example/cmd/device-simple/device-simple
 
 VERSION=$(shell cat ./VERSION 2>/dev/null || echo 0.0.0)
 SDKVERSION=$(VERSION)
-DOCKER_TAG=$(VERSION)-dev
+DOCKER_TAG=$(VERSION)
 
 ifeq ($(ENABLE_FULL_RELRO), true)
 	ENABLE_FULL_RELRO_GOFLAGS = -bindnow
@@ -44,7 +44,6 @@ docker:
 	docker build \
 		-f example/cmd/device-simple/Dockerfile \
 		--label "git_sha=$(GIT_SHA)" \
-		-t agile-edge/device-simple:$(GIT_SHA) \
 		-t agile-edge/device-simple:$(DOCKER_TAG) \
 		.
 
