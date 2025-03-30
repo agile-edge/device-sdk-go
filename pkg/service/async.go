@@ -12,17 +12,17 @@ import (
 	"fmt"
 	"regexp"
 
-	bootstrapContainer "github.com/edgexfoundry/go-mod-bootstrap/v4/bootstrap/container"
-	"github.com/edgexfoundry/go-mod-bootstrap/v4/di"
-	"github.com/edgexfoundry/go-mod-core-contracts/v4/dtos"
-	"github.com/edgexfoundry/go-mod-core-contracts/v4/dtos/requests"
-	"github.com/edgexfoundry/go-mod-core-contracts/v4/models"
+	bootstrapContainer "github.com/agile-edge/go-mod-bootstrap/v4/bootstrap/container"
+	"github.com/agile-edge/go-mod-bootstrap/v4/di"
+	"github.com/agile-edge/go-mod-core-contracts/v4/dtos"
+	"github.com/agile-edge/go-mod-core-contracts/v4/dtos/requests"
+	"github.com/agile-edge/go-mod-core-contracts/v4/models"
 
-	"github.com/edgexfoundry/device-sdk-go/v4/internal/cache"
-	"github.com/edgexfoundry/device-sdk-go/v4/internal/common"
-	"github.com/edgexfoundry/device-sdk-go/v4/internal/container"
-	"github.com/edgexfoundry/device-sdk-go/v4/internal/transformer"
-	sdkModels "github.com/edgexfoundry/device-sdk-go/v4/pkg/models"
+	"github.com/agile-edge/device-sdk-go/v4/internal/cache"
+	"github.com/agile-edge/device-sdk-go/v4/internal/common"
+	"github.com/agile-edge/device-sdk-go/v4/internal/container"
+	"github.com/agile-edge/device-sdk-go/v4/internal/transformer"
+	sdkModels "github.com/agile-edge/device-sdk-go/v4/pkg/models"
 )
 
 // processAsyncResults processes readings that are pushed from

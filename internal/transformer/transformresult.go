@@ -10,14 +10,14 @@ import (
 	"fmt"
 	"math"
 
-	"github.com/edgexfoundry/go-mod-core-contracts/v4/clients/interfaces"
-	"github.com/edgexfoundry/go-mod-core-contracts/v4/clients/logger"
-	"github.com/edgexfoundry/go-mod-core-contracts/v4/common"
-	"github.com/edgexfoundry/go-mod-core-contracts/v4/errors"
-	"github.com/edgexfoundry/go-mod-core-contracts/v4/models"
+	"github.com/agile-edge/go-mod-core-contracts/v4/clients/interfaces"
+	"github.com/agile-edge/go-mod-core-contracts/v4/clients/logger"
+	"github.com/agile-edge/go-mod-core-contracts/v4/common"
+	"github.com/agile-edge/go-mod-core-contracts/v4/errors"
+	"github.com/agile-edge/go-mod-core-contracts/v4/models"
 
-	sdkCommon "github.com/edgexfoundry/device-sdk-go/v4/internal/common"
-	sdkModels "github.com/edgexfoundry/device-sdk-go/v4/pkg/models"
+	sdkCommon "github.com/agile-edge/device-sdk-go/v4/internal/common"
+	sdkModels "github.com/agile-edge/device-sdk-go/v4/pkg/models"
 )
 
 const (

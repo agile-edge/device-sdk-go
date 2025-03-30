@@ -10,15 +10,15 @@ import (
 	"context"
 	"fmt"
 
-	"github.com/edgexfoundry/device-sdk-go/v4/internal/cache"
-	"github.com/edgexfoundry/device-sdk-go/v4/internal/container"
+	"github.com/agile-edge/device-sdk-go/v4/internal/cache"
+	"github.com/agile-edge/device-sdk-go/v4/internal/container"
 
-	bootstrapContainer "github.com/edgexfoundry/go-mod-bootstrap/v4/bootstrap/container"
-	"github.com/edgexfoundry/go-mod-bootstrap/v4/di"
-	"github.com/edgexfoundry/go-mod-core-contracts/v4/dtos"
-	"github.com/edgexfoundry/go-mod-core-contracts/v4/dtos/requests"
-	"github.com/edgexfoundry/go-mod-core-contracts/v4/errors"
-	"github.com/edgexfoundry/go-mod-core-contracts/v4/models"
+	bootstrapContainer "github.com/agile-edge/go-mod-bootstrap/v4/bootstrap/container"
+	"github.com/agile-edge/go-mod-bootstrap/v4/di"
+	"github.com/agile-edge/go-mod-core-contracts/v4/dtos"
+	"github.com/agile-edge/go-mod-core-contracts/v4/dtos/requests"
+	"github.com/agile-edge/go-mod-core-contracts/v4/errors"
+	"github.com/agile-edge/go-mod-core-contracts/v4/models"
 )
 
 func UpdateProfile(profileRequest requests.DeviceProfileRequest, dic *di.Container) errors.EdgeX {

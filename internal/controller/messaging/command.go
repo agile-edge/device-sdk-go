@@ -12,16 +12,16 @@ import (
 	"net/url"
 	"strings"
 
-	bootstrapContainer "github.com/edgexfoundry/go-mod-bootstrap/v4/bootstrap/container"
-	"github.com/edgexfoundry/go-mod-bootstrap/v4/di"
-	"github.com/edgexfoundry/go-mod-core-contracts/v4/common"
-	"github.com/edgexfoundry/go-mod-core-contracts/v4/dtos/responses"
-	"github.com/edgexfoundry/go-mod-core-contracts/v4/errors"
-	"github.com/edgexfoundry/go-mod-messaging/v4/pkg/types"
+	bootstrapContainer "github.com/agile-edge/go-mod-bootstrap/v4/bootstrap/container"
+	"github.com/agile-edge/go-mod-bootstrap/v4/di"
+	"github.com/agile-edge/go-mod-core-contracts/v4/common"
+	"github.com/agile-edge/go-mod-core-contracts/v4/dtos/responses"
+	"github.com/agile-edge/go-mod-core-contracts/v4/errors"
+	"github.com/agile-edge/go-mod-messaging/v4/pkg/types"
 
-	"github.com/edgexfoundry/device-sdk-go/v4/internal/application"
-	sdkCommon "github.com/edgexfoundry/device-sdk-go/v4/internal/common"
-	"github.com/edgexfoundry/device-sdk-go/v4/internal/container"
+	"github.com/agile-edge/device-sdk-go/v4/internal/application"
+	sdkCommon "github.com/agile-edge/device-sdk-go/v4/internal/common"
+	"github.com/agile-edge/device-sdk-go/v4/internal/container"
 )
 
 func SubscribeCommands(ctx context.Context, dic *di.Container) errors.EdgeX {

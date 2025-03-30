@@ -9,9 +9,9 @@
 package main
 
 import (
-	"github.com/edgexfoundry/device-sdk-go/v4"
-	"github.com/edgexfoundry/device-sdk-go/v4/example/driver"
-	"github.com/edgexfoundry/device-sdk-go/v4/pkg/startup"
+	"github.com/agile-edge/device-sdk-go/v4"
+	"github.com/agile-edge/device-sdk-go/v4/example/driver"
+	"github.com/agile-edge/device-sdk-go/v4/pkg/startup"
 )
 
 const (

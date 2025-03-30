@@ -8,13 +8,13 @@ package utils
 import (
 	"context"
 
-	"github.com/edgexfoundry/device-sdk-go/v4/internal/container"
-	sdkModels "github.com/edgexfoundry/device-sdk-go/v4/pkg/models"
-	bootstrapContainer "github.com/edgexfoundry/go-mod-bootstrap/v4/bootstrap/container"
-	"github.com/edgexfoundry/go-mod-bootstrap/v4/di"
-	"github.com/edgexfoundry/go-mod-core-contracts/v4/common"
-	"github.com/edgexfoundry/go-mod-core-contracts/v4/dtos"
-	"github.com/edgexfoundry/go-mod-messaging/v4/pkg/types"
+	"github.com/agile-edge/device-sdk-go/v4/internal/container"
+	sdkModels "github.com/agile-edge/device-sdk-go/v4/pkg/models"
+	bootstrapContainer "github.com/agile-edge/go-mod-bootstrap/v4/bootstrap/container"
+	"github.com/agile-edge/go-mod-bootstrap/v4/di"
+	"github.com/agile-edge/go-mod-core-contracts/v4/common"
+	"github.com/agile-edge/go-mod-core-contracts/v4/dtos"
+	"github.com/agile-edge/go-mod-messaging/v4/pkg/types"
 )
 
 func PublishDeviceDiscoveryProgressSystemEvent(id string, progress, discoveredDeviceCount int, message string, ctx context.Context, dic *di.Container) {

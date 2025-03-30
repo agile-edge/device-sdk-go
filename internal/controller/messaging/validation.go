@@ -8,15 +8,15 @@ package messaging
 import (
 	"context"
 
-	bootstrapContainer "github.com/edgexfoundry/go-mod-bootstrap/v4/bootstrap/container"
-	"github.com/edgexfoundry/go-mod-bootstrap/v4/di"
-	"github.com/edgexfoundry/go-mod-core-contracts/v4/common"
-	"github.com/edgexfoundry/go-mod-core-contracts/v4/dtos"
-	"github.com/edgexfoundry/go-mod-core-contracts/v4/dtos/requests"
-	"github.com/edgexfoundry/go-mod-core-contracts/v4/errors"
-	"github.com/edgexfoundry/go-mod-messaging/v4/pkg/types"
+	bootstrapContainer "github.com/agile-edge/go-mod-bootstrap/v4/bootstrap/container"
+	"github.com/agile-edge/go-mod-bootstrap/v4/di"
+	"github.com/agile-edge/go-mod-core-contracts/v4/common"
+	"github.com/agile-edge/go-mod-core-contracts/v4/dtos"
+	"github.com/agile-edge/go-mod-core-contracts/v4/dtos/requests"
+	"github.com/agile-edge/go-mod-core-contracts/v4/errors"
+	"github.com/agile-edge/go-mod-messaging/v4/pkg/types"
 
-	"github.com/edgexfoundry/device-sdk-go/v4/internal/container"
+	"github.com/agile-edge/device-sdk-go/v4/internal/container"
 )
 
 func SubscribeDeviceValidation(ctx context.Context, dic *di.Container) errors.EdgeX {

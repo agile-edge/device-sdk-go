@@ -18,8 +18,8 @@ ifeq ($(ENABLE_FULL_RELRO), true)
 	ENABLE_FULL_RELRO_GOFLAGS = -bindnow
 endif
 
-GOFLAGS=-ldflags "-X github.com/edgexfoundry/device-sdk-go/v4.Version=$(VERSION) \
-                  -X github.com/edgexfoundry/device-sdk-go/v4/internal/common.SDKVersion=$(SDKVERSION) \
+GOFLAGS=-ldflags "-X github.com/agile-edge/device-sdk-go/v4.Version=$(VERSION) \
+                  -X github.com/agile-edge/device-sdk-go/v4/internal/common.SDKVersion=$(SDKVERSION) \
                   $(ENABLE_FULL_RELRO_GOFLAGS)" -trimpath -mod=readonly
 
 GOTESTFLAGS?=-race
@@ -44,8 +44,8 @@ docker:
 	docker build \
 		-f example/cmd/device-simple/Dockerfile \
 		--label "git_sha=$(GIT_SHA)" \
-		-t edgexfoundry/device-simple:$(GIT_SHA) \
-		-t edgexfoundry/device-simple:$(DOCKER_TAG) \
+		-t agile-edge/device-simple:$(GIT_SHA) \
+		-t agile-edge/device-simple:$(DOCKER_TAG) \
 		.
 
 unittest:

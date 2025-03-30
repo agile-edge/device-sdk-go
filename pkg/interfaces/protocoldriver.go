@@ -12,9 +12,9 @@
 package interfaces
 
 import (
-	"github.com/edgexfoundry/go-mod-core-contracts/v4/models"
+	"github.com/agile-edge/go-mod-core-contracts/v4/models"
 
-	sdkModels "github.com/edgexfoundry/device-sdk-go/v4/pkg/models"
+	sdkModels "github.com/agile-edge/device-sdk-go/v4/pkg/models"
 )
 
 // ProtocolDriver is a low-level device-specific interface used by

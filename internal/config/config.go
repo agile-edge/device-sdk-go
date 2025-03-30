@@ -10,7 +10,7 @@ package config
 import (
 	"strings"
 
-	bootstrapConfig "github.com/edgexfoundry/go-mod-bootstrap/v4/config"
+	bootstrapConfig "github.com/agile-edge/go-mod-bootstrap/v4/config"
 )
 
 // ConfigurationStruct contains the configuration properties for the device service.
@@ -44,8 +44,8 @@ func (c *ConfigurationStruct) UpdateFromRaw(rawConfig interface{}) bool {
 	// The decision to do the conversion in sdk is based on the fact that we can only modify the logic inside the
 	// decoding function of the Keeper client. Unless we opt to develop a new decoder for Consul ourselves.
 	// See:
-	// Keeper client https://github.com/edgexfoundry/go-mod-configuration/blob/2c3512b731558a2be3f8460c3f0fed9361b5dcd4/internal/pkg/keeper/client.go#L163
-	// Consul client https://github.com/edgexfoundry/go-mod-configuration/blob/2c3512b731558a2be3f8460c3f0fed9361b5dcd4/internal/pkg/consul/client.go#L206
+	// Keeper client https://github.com/agile-edge/go-mod-configuration/blob/2c3512b731558a2be3f8460c3f0fed9361b5dcd4/internal/pkg/keeper/client.go#L163
+	// Consul client https://github.com/agile-edge/go-mod-configuration/blob/2c3512b731558a2be3f8460c3f0fed9361b5dcd4/internal/pkg/consul/client.go#L206
 	if len(c.Device.Labels) == 1 && strings.HasPrefix(c.Device.Labels[0], "[") &&
 		strings.HasSuffix(c.Device.Labels[0], "]") {
 		c.Device.Labels = strings.Fields(strings.Trim(c.Device.Labels[0], "[]"))
